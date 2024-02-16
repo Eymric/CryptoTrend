@@ -21,8 +21,6 @@ class CoinGeckoService
 
     public function getMarketData(string $sort = 'market_cap', string $direction = 'desc', int $page = 1, int $perPage = 100): array
     {
-        $apiKey = env('COINGECKO_API_KEY', '');
-
         $order = "{$sort}_{$direction}";
 
         $response = $this->client->request('GET', 'coins/markets', [
